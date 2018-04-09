@@ -2,21 +2,21 @@
 
 ## Build the image
 ```
-docker build . -t optipng-dockerized
+docker build . -t froulet/docker-optipng-alpine
 ```
 
 ## Use optipng on one image
 You have to mount the folder containing the image into /app directory. Example :
 
 ```
-docker run --rm -it -v $(pwd):/app -w /app optipng-dockerized optipng -o5 image.png
+docker run --rm -it -v $(pwd):/app -w /app froulet/docker-optipng-alpine optipng -o5 image.png
 ```
 
 ## Use optipng with an absolute path
 You have to mount the image file as a volume : 
 
 ```
-docker run --rm -it -v /absolute/path/to/image/file.png:/app/image -w /app optipng-dockerized optipng -o5 image
+docker run --rm -it -v /absolute/path/to/image/file.png:/app/image -w /app froulet/docker-optipng-alpine optipng -o5 image
 ```
 
 ## Get help
@@ -24,7 +24,7 @@ docker run --rm -it -v /absolute/path/to/image/file.png:/app/image -w /app optip
 If you run the container without any option help will be show.
 
 ```
-docker run --rm -it optipng-dockerized optipng 
+docker run --rm -it froulet/docker-optipng-alpine optipng 
 ```
 
 # User feedback
